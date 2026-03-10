@@ -32,6 +32,8 @@ typewriterElements.forEach((el, index) => {
     delay += text.length * 20 + 500;
 });
 
+let verseTypewriterInterval = null;
+
 function generateVerse() {
     const name = document.getElementById('username').value;
     const output = document.getElementById('custom-verse');
@@ -39,6 +41,11 @@ function generateVerse() {
     if (!name) {
         output.textContent = 'Por favor, escribe tu nombre primero.';
         return;
+    }
+    
+    if (verseTypewriterInterval) {
+        clearInterval(verseTypewriterInterval);
+        verseTypewriterInterval = null;
     }
     
     const verses = [
@@ -52,10 +59,13 @@ function generateVerse() {
     
     output.textContent = '';
     let i = 0;
-    const interval = setInterval(() => {
+    verseTypewriterInterval = setInterval(() => {
         output.textContent += randomVerse.charAt(i);
         i++;
-        if (i >= randomVerse.length) clearInterval(interval);
+        if (i >= randomVerse.length) {
+            clearInterval(verseTypewriterInterval);
+            verseTypewriterInterval = null;
+        }
     }, 50);
 }
 
