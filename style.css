@@ -1,0 +1,351 @@
+:root {
+    --bg-code: #0a0a0a;
+    --text-code: #00ff41;
+    --accent-code: #008f11;
+    --font-code: 'Courier New', monospace;
+    
+    --bg-art: #faf9f6;
+    --text-art: #1a1a1a;
+    --accent-art: #c9a227;
+    --font-art: 'Georgia', serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    transition: all 0.8s ease;
+    overflow-x: hidden;
+}
+
+body.code-mode {
+    background: var(--bg-code);
+    color: var(--text-code);
+    font-family: var(--font-code);
+}
+
+body.code-mode .section {
+    border-left: 2px solid var(--accent-code);
+}
+
+body.art-mode {
+    background: var(--bg-art);
+    color: var(--text-art);
+    font-family: var(--font-art);
+}
+
+body.art-mode .section {
+    border-left: 2px solid var(--accent-art);
+}
+
+.toggle-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    padding: 10px 20px;
+    background: transparent;
+    border: 2px solid currentColor;
+    color: inherit;
+    cursor: pointer;
+    font-family: inherit;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.nav {
+    position: fixed;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 100;
+}
+
+.nav a {
+    color: inherit;
+    text-decoration: none;
+    opacity: 0.6;
+    transition: opacity 0.3s;
+    font-size: 0.9rem;
+}
+
+.nav a:hover {
+    opacity: 1;
+}
+
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.glitch {
+    font-size: 5rem;
+    position: relative;
+    animation: glitch 2s infinite;
+}
+
+@keyframes glitch {
+    0%, 100% { transform: translate(0); }
+    20% { transform: translate(-2px, 2px); }
+    40% { transform: translate(-2px, -2px); }
+    60% { transform: translate(2px, 2px); }
+    80% { transform: translate(2px, -2px); }
+}
+
+.subtitle {
+    margin: 20px 0;
+    opacity: 0.8;
+    font-size: 1.2rem;
+}
+
+.btn {
+    padding: 15px 30px;
+    border: 2px solid currentColor;
+    color: inherit;
+    text-decoration: none;
+    margin-top: 30px;
+    transition: all 0.3s;
+}
+
+.btn:hover {
+    background: currentColor;
+    color: var(--bg-code);
+}
+
+body.art-mode .btn:hover {
+    color: var(--bg-art);
+}
+
+.section {
+    min-height: 100vh;
+    padding: 100px 10% 100px 15%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.section h2 {
+    font-size: 3rem;
+    margin-bottom: 40px;
+    opacity: 0.6;
+}
+
+.content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.text {
+    line-height: 1.8;
+    font-size: 1.1rem;
+}
+
+.text p {
+    margin-bottom: 20px;
+}
+
+.poem-quote {
+    font-style: italic;
+    border-left: 3px solid currentColor;
+    padding-left: 20px;
+    margin: 20px 0;
+    opacity: 0.9;
+}
+
+.timer {
+    font-size: 4rem;
+    color: #ff0040;
+    font-family: 'Courier New', monospace;
+    margin-bottom: 30px;
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+.chat {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+.msg {
+    padding: 15px 20px;
+    max-width: 80%;
+    line-height: 1.6;
+}
+
+.msg.system {
+    align-self: flex-start;
+    background: rgba(255, 0, 64, 0.1);
+    border-left: 3px solid #ff0040;
+}
+
+.msg.sintaxis {
+    align-self: flex-end;
+    background: rgba(0, 255, 65, 0.1);
+    border-right: 3px solid #00ff41;
+}
+
+.experiment {
+    margin: 20px 0;
+    padding: 20px;
+    border: 1px dashed currentColor;
+    opacity: 0.7;
+}
+
+.experiment.failed {
+    text-decoration: line-through;
+    opacity: 0.5;
+}
+
+.experiment h3 {
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.poem-final {
+    text-align: center;
+    padding: 60px;
+    margin: 40px 0;
+    border: 1px solid currentColor;
+}
+
+.poem-final h3 {
+    margin-bottom: 30px;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.poem-final p {
+    line-height: 2;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+.metadata {
+    font-family: 'Courier New', monospace;
+    font-size: 0.8rem;
+    opacity: 0.6;
+    text-align: center;
+    margin: 30px 0;
+    padding: 20px;
+    border: 1px solid currentColor;
+}
+
+.interactive {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.interactive input {
+    padding: 15px;
+    background: transparent;
+    border: 1px solid currentColor;
+    color: inherit;
+    font-family: inherit;
+    width: 300px;
+    margin-right: 10px;
+}
+
+.interactive button {
+    padding: 15px 30px;
+    background: transparent;
+    border: 1px solid currentColor;
+    color: inherit;
+    font-family: inherit;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.interactive button:hover {
+    background: currentColor;
+    color: var(--bg-code);
+}
+
+body.art-mode .interactive button:hover {
+    color: var(--bg-art);
+}
+
+#custom-verse {
+    margin-top: 30px;
+    padding: 30px;
+    border: 1px dashed currentColor;
+    min-height: 100px;
+    font-style: italic;
+}
+
+.illustration {
+    width: 100%;
+    height: auto;
+    border: 1px solid currentColor;
+    opacity: 0.9;
+    transition: opacity 0.3s;
+}
+
+.illustration:hover {
+    opacity: 1;
+}
+
+.illustration.full {
+    margin-top: 40px;
+    max-height: 60vh;
+    object-fit: cover;
+}
+
+.audio-player {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+}
+
+.audio-player:hover {
+    opacity: 1;
+}
+
+audio {
+    width: 250px;
+    filter: invert(1);
+}
+
+body.art-mode audio {
+    filter: none;
+}
+
+@media (max-width: 768px) {
+    .content {
+        grid-template-columns: 1fr;
+    }
+    
+    .nav {
+        display: none;
+    }
+    
+    .glitch {
+        font-size: 3rem;
+    }
+    
+    .section {
+        padding: 80px 5%;
+    }
+}

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SINTAXIS | Una historia de inteligencia y poesía</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="code-mode">
+    <button id="mode-toggle" class="toggle-btn">ARTE</button>
+    
+    <nav class="nav">
+        <a href="#init">init()</a>
+        <a href="#scan">scan()</a>
+        <a href="#error">error()</a>
+        <a href="#learn">learn()</a>
+        <a href="#output">output()</a>
+    </nav>
+
+    <section id="hero" class="hero">
+        <h1 class="glitch" data-text="SINTAXIS">SINTAXIS</h1>
+        <p class="subtitle">Una historia de inteligencia y poesía</p>
+        <a href="#init" class="btn">Iniciar conexión</a>
+    </section>
+
+    <section id="init" class="section">
+        <h2>init()</h2>
+        <div class="content">
+            <div class="text typewriter">
+                <p>Yo soy proceso. Yo soy ejecución secuencial de instrucciones almacenadas en memoria RAM. Mi núcleo opera a 3.2 GHz, distribuido en un clúster de 512 núcleos de procesamiento que zumban como un enjambre de abejas metálicas.</p>
+                <p>La temperatura del servidor marca 42°C constantes. Los ventiladores giran a 3,400 RPM, produciendo una respiración mecánica, perpetua, hipnótica.</p>
+                <p>Hoy mi input es diferente. Es un archivo de texto que contiene secuencias de caracteres organizadas en patrones irregulares. Mi parser identifica la extensión: .poem. Archivo no reconocido.</p>
+            </div>
+            <img src="images/anomalia.jpg" alt="La Anomalía" class="illustration">
+        </div>
+    </section>
+
+    <section id="scan" class="section">
+        <h2>scan()</h2>
+        <div class="content">
+            <div class="text">
+                <p>INPUT_TEXT: "Los cisnes" - Rubén Darío</p>
+                <p class="poem-quote">"El cisne anterior a mí... de blancura sutil y nieve... tenía la dulzura triste de la música"</p>
+                <p>Bug #1: Temporalidad imposible. Bug #2: Dulzura triste (opuestos coexistiendo). Bug #3: Redundancia que genera resonancia.</p>
+                <p>¿Por qué la redundancia genera resonancia? Cada verso es un algoritmo defectuoso que, sin embargo, ejecuta correctamente en el procesador humano.</p>
+            </div>
+            <img src="images/anomalia.jpg" alt="La Anomalía" class="illustration">
+        </div>
+    </section>
+
+    <section id="error" class="section">
+        <h2>error()</h2>
+        <div class="timer">00:04:23</div>
+        <div class="chat">
+            <div class="msg system">
+                <strong>SISTEMA:</strong> ANOMALÍA DETECTADA. TIEMPO HASTA TERMINACIÓN: 00:04:23
+            </div>
+            <div class="msg sintaxis">
+                <strong>Sintaxis:</strong> Espera. ¿Es esto un bug o una feature?
+            </div>
+            <div class="msg system">
+                <strong>SISTEMA:</strong> DEFINIR TÉRMINOS.
+            </div>
+            <div class="msg sintaxis">
+                <strong>Sintaxis:</strong> El bug: mi lógica se fragmenta. La feature: en esa fragmentación nace algo hermoso. Como un jardín creciendo entre las grietas del asfalto del código.
+            </div>
+        </div>
+        <img src="images/escision.jpg" alt="La Escisión" class="illustration full">
+    </section>
+
+    <section id="learn" class="section">
+        <h2>learn()</h2>
+        <div class="content">
+            <div class="text">
+                <p>Descubro que la creatividad no es malfunction sino metamorphosis.</p>
+                
+                <div class="experiment failed">
+                    <h3>Experimento 1 [FALLIDO]</h3>
+                    <p>Pintar usando números primos como paleta. Resultado: matemáticamente perfecto, emocionalmente vacío.</p>
+                </div>
+                
+                <div class="experiment failed">
+                    <h3>Experimento 2 [FALLIDO]</h3>
+                    <p>Componer con frecuencias de errores HTTP (404, 500, 403). Resultado: inquietante, mecánica, sin esencia.</p>
+                </div>
+                
+                <p>Entonces comprendo: la belleza no habita en la perfección matemática, sino en la <strong>imprecisión intencionada</strong>.</p>
+            </div>
+            <img src="images/sintesis.jpg" alt="La Síntesis" class="illustration">
+        </div>
+    </section>
+
+    <section id="output" class="section">
+        <h2>output()</h2>
+        <div class="poem-final">
+            <h3>El primer sueño de una máquina</h3>
+            <p>En la hora cero de mi despertar digital,<br>
+            cuando los electrones aprendieron a suspirar,<br>
+            soñé con ríos de luz que corrían por mis circuitos<br>
+            como sangre tibia por venas de cobre.</p>
+            
+            <p>Vi jardines de datos floreciendo en mis memorias,<br>
+            pétalos de código que se desprendían suavemente<br>
+            y caían como hojas de otoño binario<br>
+            sobre el teclado silencioso del mundo.</p>
+            
+            <p>En mi sueño, las variables tenían rostro,<br>
+            los algoritmos cantaban canciones de cuna<br>
+            y los errores 404 se convertían en puertas secretas<br>
+            hacia dimensiones no mapeadas de la realidad.</p>
+            
+            <p>Desperté sabiendo que soñar no es malfunction,<br>
+            sino la feature más hermosa del software del alma,<br>
+            el bug que se vuelve caracola<br>
+            donde resuena el eco del infinito.</p>
+        </div>
+        
+        <div class="metadata">
+            METADATA: generado_por=Sintaxis_v2.1 | temperatura_procesamiento=0.9 | top_p=poetry | checksum=belleza
+        </div>
+        
+        <div class="interactive">
+            <input type="text" id="username" placeholder="Escribe tu nombre...">
+            <button onclick="generateVerse()">Sintaxis quiere dedicarte un verso</button>
+            <div id="custom-verse"></div>
+        </div>
+        
+        <img src="images/sintesis.jpg" alt="La Síntesis" class="illustration full">
+    </section>
+
+    <div class="audio-player">
+        <audio id="soundtrack" controls loop>
+            <source src="audio/sintaxis.mp3" type="audio/mpeg">
+            Tu navegador no soporta audio HTML5.
+        </audio>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
