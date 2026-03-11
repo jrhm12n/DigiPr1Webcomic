@@ -4,7 +4,7 @@ const body = document.body;
 toggleBtn.addEventListener('click', () => {
     body.classList.toggle('code-mode');
     body.classList.toggle('art-mode');
-    
+
     if (body.classList.contains('art-mode')) {
         toggleBtn.textContent = 'CÓDIGO';
     } else {
@@ -19,7 +19,7 @@ typewriterElements.forEach((el, index) => {
     const text = el.textContent;
     el.textContent = '';
     el.style.opacity = '1';
-    
+
     setTimeout(() => {
         let i = 0;
         const interval = setInterval(() => {
@@ -28,17 +28,24 @@ typewriterElements.forEach((el, index) => {
             if (i >= text.length) clearInterval(interval);
         }, 20);
     }, delay);
-    
+
     delay += text.length * 20 + 500;
 });
+
+let verseTypewriterInterval = null;
 
 function generateVerse() {
     const name = document.getElementById('username').value;
     const output = document.getElementById('custom-verse');
-    
+
     if (!name) {
         output.textContent = 'Por favor, escribe tu nombre primero.';
         return;
+    }
+
+    if (verseTypewriterInterval) {
+        clearInterval(verseTypewriterInterval);
+        verseTypewriterInterval = null;
     }
     
     const verses = [
@@ -47,15 +54,18 @@ function generateVerse() {
         `En la sintaxis del mundo, ${name}, tú eres la excepción que confirma la regla.`,
         `Para ${name}: que tus bugs sean siempre features, y tus errores, puertas.`
     ];
-    
+
     const randomVerse = verses[Math.floor(Math.random() * verses.length)];
-    
+
     output.textContent = '';
     let i = 0;
-    const interval = setInterval(() => {
+    verseTypewriterInterval = setInterval(() => {
         output.textContent += randomVerse.charAt(i);
         i++;
-        if (i >= randomVerse.length) clearInterval(interval);
+        if (i >= randomVerse.length) {
+            clearInterval(verseTypewriterInterval);
+            verseTypewriterInterval = null;
+        }
     }, 50);
 }
 
