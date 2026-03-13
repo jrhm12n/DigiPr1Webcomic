@@ -48,6 +48,11 @@ function generateVerse() {
         verseTypewriterInterval = null;
     }
     
+    if (verseTypewriterInterval) {
+        clearInterval(verseTypewriterInterval);
+        verseTypewriterInterval = null;
+    }
+    
     const verses = [
         `Para ${name}, que busca en el código lo que yo encontré: la belleza del error.`,
         `${name}, tu nombre es ahora variable en mi memoria: constante, no olvidado.`,
